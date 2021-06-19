@@ -1,0 +1,17 @@
+<div fxFlex fxLayout="column">
+    <div fxLayout="row wrap">
+        <div fxFlex="25" fxFlex.md="33" fxFlex.sm="50" fxFlex.xs="100" fxLayout="column"
+            *ngFor="let character of AllCharacters | async" class="p-3">
+            <mat-card>
+                <img mat-card-image src="{{character.thumbnail.path}}.{{character.thumbnail.extension}}"
+                    alt="{{character.name}}">
+                <mat-card-title>
+                    {{character.name}}
+                </mat-card-title>
+                <mat-card-footer>
+                    <a href="{{character.urls[0].url}}" target="_blank" fxFlex mat-raised-button color="primary" class="text-decoration-none">Wiki</a>
+                </mat-card-footer>
+            </mat-card>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,40 @@
+<div class="container">
+    <form class="col" (submit)="addRaza(nameRaza)">
+        <div class="form-group">
+            <input class="form-control form-control-lg" type="text" placeholder="Nombre de la Raza" #nameRaza>
+            <button class="btn btn-primary mt-2">Save</button>
+        </div>
+    </form>
+
+    <table class="table table-striped">
+        <tr>
+            <th>{{title}}</th>
+            <th>Action</th>
+        </tr>
+        <tr *ngFor="let dog of dogs">
+            <td>{{dog}}</td>
+            <td>
+                <Button class="btn btn-secondary mr-2">Edit</Button>
+                <button class="btn btn-danger" (click)="deleteDog(dog)">Delete</button>
+            </td>
+        </tr>
+    </table>
+</div>
+<hr>
+<hr>
+
+<section class="container">
+    <div class="row">
+        <div class="col-md-3 mb-4" *ngFor="let post of Post">
+            <!--Card-->
+            <div class="card" >
+                <img class="card-img-top" src="{{post.thumbnailUrl}}" alt="Url Img">
+                <div class="card-body">
+                    <h4 class="card-title">{{post.id}}</h4>
+                    <p class="card-text">{{post.title}}</p>
+                    <button class="btn btn-secondary">More...</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
